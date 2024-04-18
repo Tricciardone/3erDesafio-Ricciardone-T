@@ -1,0 +1,92 @@
+[
+  {
+      "id": "1",
+      "title": "Producto 1",
+      "description": "Descripción del Producto 1",
+      "price": 10.99,
+      "thumbnail": "https://ejemplo.com/imagen1.jpg",
+      "code": "ABC123",
+      "stock": 20
+  },
+  {
+      "id": "2",
+      "title": "Producto 2",
+      "description": "Descripción del Producto 2",
+      "price": 15.99,
+      "thumbnail": "https://ejemplo.com/imagen2.jpg",
+      "code": "DEF456",
+      "stock": 15
+  },
+  {
+      "id": "3",
+      "title": "Producto 3",
+      "description": "Descripción del Producto 3",
+      "price": 20.50,
+      "thumbnail": "https://ejemplo.com/imagen3.jpg",
+      "code": "GHI789",
+      "stock": 30
+  },
+  {
+      "id": "4",
+      "title": "Producto 4",
+      "description": "Descripción del Producto 4",
+      "price": 8.75,
+      "thumbnail": "https://ejemplo.com/imagen4.jpg",
+      "code": "JKL012",
+      "stock": 25
+  },
+  {
+      "id": "5",
+      "title": "Producto 5",
+      "description": "Descripción del Producto 5",
+      "price": 12.49,
+      "thumbnail": "https://ejemplo.com/imagen5.jpg",
+      "code": "MNO345",
+      "stock": 18
+  },
+  {
+      "id": "6",
+      "title": "Producto 6",
+      "description": "Descripción del Producto 6",
+      "price": 18.99,
+      "thumbnail": "https://ejemplo.com/imagen6.jpg",
+      "code": "PQR678",
+      "stock": 22
+  },
+  {
+      "id": "7",
+      "title": "Producto 7",
+      "description": "Descripción del Producto 7",
+      "price": 9.99,
+      "thumbnail": "https://ejemplo.com/imagen7.jpg",
+      "code": "STU901",
+      "stock": 35
+  },
+  {
+      "id": "8",
+      "title": "Producto 8",
+      "description": "Descripción del Producto 8",
+      "price": 25.00,
+      "thumbnail": "https://ejemplo.com/imagen8.jpg",
+      "code": "VWX234",
+      "stock": 10
+  },
+  {
+      "id": "9",
+      "title": "Producto 9",
+      "description": "Descripción del Producto 9",
+      "price": 14.75,
+      "thumbnail": "https://ejemplo.com/imagen9.jpg",
+      "code": "YZA567",
+      "stock": 28
+  },
+  {
+      "id": "10",
+      "title": "Producto 10",
+      "description": "Descripción del Producto 10",
+      "price": 16.99,
+      "thumbnail": "https://ejemplo.com/imagen10.jpg",
+      "code": "BCD890",
+      "stock": 17
+  }
+]
