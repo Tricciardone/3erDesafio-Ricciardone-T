@@ -16,6 +16,7 @@ class Product {
         this.thumbnail = thumbnail;
         this.code = code;
         this.stock = stock;
+        this.status = true; // Se establece como true por defecto
         this.id = Math.random().toString(36).substr(2, 9); // Generando un ID aleatorio
     }
 }
@@ -74,6 +75,9 @@ class ProductManager {
         if (productIndex === -1) {
             throw new Error("Producto no encontrado");
         }
+
+        // No se actualiza el ID
+        delete updatedFields.id;
 
         this.products[productIndex] = { ...this.products[productIndex], ...updatedFields };
         this.saveProductsToFile();
@@ -134,6 +138,51 @@ app.get('/products/:productId', (req, res) => {
     try {
         const product = manager.getProductById(productId);
         res.json(product);
+    } catch (error) {
+        res.status(404).json({ error: error.message });
+    }
+});
+
+// Ruta para agregar un nuevo producto
+app.post('/products', (req, res) => {
+    const { title, description, price, code, stock, thumbnails } = req.body;
+
+    // Validar campos obligatorios
+    if (!title || !description || !price || !code || !stock || !thumbnails) {
+        return res.status(400).json({ error: "Todos los campos son obligatorios" });
+    }
+
+    try {
+        // Añadir el producto
+        manager.addProduct(title, description, price, thumbnails, code, stock);
+        res.status(201).json({ message: "Producto creado exitosamente" });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Ruta para actualizar un producto por su ID
+app.put('/products/:productId', (req, res) => {
+    const productId = req.params.productId;
+    const updatedFields = req.body;
+
+    try {
+        // Actualizar el producto
+        manager.updateProduct(productId, updatedFields);
+        res.json({ message: "Producto actualizado correctamente" });
+    } catch (error) {
+        res.status(404).json({ error: error.message });
+    }
+});
+
+// Ruta para eliminar un producto por su ID
+app.delete('/products/:productId', (req, res) => {
+    const productId = req.params.productId;
+
+    try {
+        // Eliminar el producto
+        manager.deleteProduct(productId);
+        res.json({ message: "Producto eliminado correctamente" });
     } catch (error) {
         res.status(404).json({ error: error.message });
     }
